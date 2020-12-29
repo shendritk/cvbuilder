@@ -18,7 +18,7 @@ const globalErrorHandler = require("./controllers/errorController");
 app.use(cors());
 
 app.use(express.json({ limit: "10kb" }));
-app.use(express.static(`${__dirname}/public`));
+app.use(express.static(`${__dirname}/build`));
 
 app.use(helmet());
 
