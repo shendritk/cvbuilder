@@ -1,0 +1,228 @@
+html {
+  -webkit-print-color-adjust: exact;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.root {
+  width: 1000px;
+  height: 1500px;
+  font-family: "Roboto", sans-serif;
+  color: #1a202c;
+}
+
+.top {
+  height: 22%;
+  background-color: #ef5777;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.top span {
+  color: #1a202c;
+}
+
+.top__square {
+  height: 70px;
+  width: 70px;
+  background-color: #1a202c;
+}
+
+.top__squareTop {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.top__squareBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.top h2 {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.top__profession {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: #f3f3f3;
+}
+
+.top h3 {
+  background-color: #1a202c;
+  padding: 5px 20px;
+  margin-top: 20px;
+}
+
+.main {
+  background-color: #f7fafc;
+  height: 100%;
+  display: flex;
+}
+
+.main__left {
+  width: 40%;
+  height: 100%;
+  flex: 1;
+}
+
+.profile {
+  padding: 30px;
+}
+
+.category__title {
+  font-size: 2.5rem;
+  color: #ef5777;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.profile__info {
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.main__right {
+  width: 60%;
+  height: 100%;
+  flex: 1;
+}
+
+.skills,
+.languages {
+  padding: 30px;
+}
+
+.language__item {
+  margin-bottom: 5px;
+}
+
+.skills__list .languages__list {
+  margin-top: 20px;
+}
+
+.skill__name {
+  width: 60%;
+  margin-bottom: 5px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+}
+
+.skill__progress {
+  width: 30%;
+  height: 5px;
+  background-color: #ef5777;
+}
+
+.hoobies {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hooby_item {
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.experiences {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.education__container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.education > h2 {
+  padding-left: 20px;
+}
+
+.educationItem {
+  margin-bottom: 20px;
+}
+
+.experiences h3,
+.educationItem h3 {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+
+.experiences:nth-child(2),
+.experiences:nth-child(3) {
+  margin-top: 10px;
+}
+
+.experience__position {
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.educationItem__studyField {
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.experience > div {
+  margin-top: 5px;
+}
+
+.experience__duration {
+  margin-right: 5px;
+}
+
+.educationItem__duration {
+  margin-right: 5px;
+}
+
+.experience__description {
+  margin-bottom: 20px;
+}
+
+.educationItem > div > span {
+  margin-right: 5px;
+}
+
+.education > span {
+  margin-left: 20px;
+}
+
+.references {
+  padding: 20px;
+}
+
+.references__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reference {
+  display: flex;
+  flex-direction: column;
+}
+
+.reference__item {
+  margin-top: 5px;
+}

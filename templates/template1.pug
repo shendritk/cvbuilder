@@ -1,0 +1,80 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap' rel='stylesheet')
+    link(href='template1.css' rel='stylesheet')
+  body
+    .container
+      .left
+        h3.left__contactLabel CONTACT
+        .left__main
+          .left__contactRow
+            ul
+              li Address
+              li=data.categories.contacts[3].value
+              li= `${data.categories.contacts[4].value}, ${data.categories.contacts[5].value} ${data.categories.contacts[6].value}`
+          - var phoneExists = data.categories.contacts[7].value !== ""
+          if phoneExists
+            .left__contactRow
+              ul
+                li Phone
+                li=data.categories.contacts[7].value
+          .left__contactRow
+            ul
+              li Email Address
+              li=data.categories.contacts[8].value
+          .left__contactRow
+            ul
+              li Website
+              li=data.categories.contacts[9].value
+          h3.left__contactLabel SKILLS
+          each skill in data.categories.skills
+            .left__skillName= skill.name
+            .left__skillProgressContainer
+              div(class=`left__skillProgress left__skillProgress--${skill.progress}`)
+
+          h3.left__contactLabel LANGUAGES
+          each language in data.categories.languages
+            .left__languageContainer
+              div= language.name
+              div
+                | Level: 
+                span.left__languageContainerSpan= language.level
+        h3.left__contactLabel HOOBIES
+        each hooby in data.categories.hoobies
+          .left__hoobiesLabel= hooby.name
+        
+      .right
+        h2.right__name= `${data.categories.contacts[0].value} ${data.categories.contacts[1].value}`
+        h3.right__profession=data.categories.contacts[2].value
+        .right__section
+          .right__text EXPERIENCE
+          each experience in data.categories.experiences
+            .right__row
+              .right__rowLeft
+                .right__rowLeftDate= `${experience.startedAt} - ${experience.completedAt}`
+                .right__rowLeftText= experience.company
+              .right__rowRight
+                .right_rowRightTitle= experience.position
+                p= experience.description
+          
+          .right__text EDUCATION
+          each ed in data.categories.education
+            .right__row
+              .right__rowLeft
+                .right__rowLeftDate= `${ed.startedAt} - ${ed.completedAt}`
+                .right__rowLeftText= ed.institution
+              .right__rowRight
+                .right_rowRightTitle= ed.studyField
+                p= ed.description
+
+          .right__text REFERENCES
+          .right__referencesContainer
+            each reference in data.categories.references
+              .right__referenceContainer
+                span.right__referencesText= reference.fullName
+                span.right__referencesText= reference.profession
+                span.right__referencesText= reference.phoneNumber
+                span.right__referencesText= reference.email

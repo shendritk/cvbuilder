@@ -1,0 +1,71 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+        meta(name=`viewport" content="width=device-width, initial-scale=1.0`)
+        link(href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap' rel='stylesheet')
+        link(href='template2.css' rel='stylesheet')
+    body
+        .top
+            .top__square.top__squareTop
+            .div
+                h2=`${data.categories.contacts[0].value} `
+                    span= data.categories.contacts[1].value
+                .top__profession=data.categories.contacts[2].value
+            h3=`${data.categories.contacts[3].value}, ${data.categories.contacts[4].value}, ${data.categories.contacts[5].value} ${data.categories.contacts[6].value}`
+            .top__square.top__squareBottom
+        .main
+            .main__left
+                .profile
+                    span.category__title Profile
+                    p.profile__info= data.categories.contacts[10].value
+                .skills
+                    span.category__title SKILLS
+                    .skills__list
+                        each skill in data.categories.skills
+                            .skill
+                                span.skill__name=skill.name
+                                .skill__progress
+
+                .languages
+                    span.category__title LANGUAGES
+                    .languages__list
+                        each language in data.categories.languages
+                            .language__item=`${language.name} : ${language.level}`                
+                        
+                .hoobies
+                    span.category__title HOOBIES
+                    each hooby in data.categories.hoobies
+                        span.hooby_item=hooby.name
+            
+            .main__right
+                .experiences
+                    span.category__title Experience
+                    each experience in data.categories.experiences
+                        .experience(style='margin-top:20px;')
+                            span.experience__position=experience.position
+                            div
+                                span.experience__duration=`${experience.startedAt} - ${experience.completedAt}`
+                                span.experience__company=experience.company
+                            p.experience__description=experience.description
+
+                .education
+                    span.category__title Education
+                    .education__container
+                        each ed in data.categories.education
+                            .educationItem
+                                span.educationItem__studyField=ed.studyField
+                                div
+                                    span.educationItem__duration=`${ed.startedAt} - ${ed.completedAt}`
+                                    span.educationItem__institution=ed.institution
+                                p.educationItem__description=ed.description
+
+                .references
+                    span.category__title References
+                    .references__container
+                        each reference in data.categories.references
+                            .reference 
+                                span.reference__item.reference__name=reference.fullName
+                                span.reference__item.reference__position=reference.profession
+                                span.reference__item.reference__email=reference.email
+                                span.reference__item.reference__phone=reference.phoneNumber

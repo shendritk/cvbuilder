@@ -1,0 +1,94 @@
+.category,
+.category:hover,
+.category:active,
+.category:focus {
+  outline: none;
+}
+
+.category svg {
+  margin-left: 1rem;
+}
+
+.category::before {
+  content: "";
+  height: 0px;
+  width: 3px;
+  background-color: white;
+  transition: all 400ms ease-in-out;
+}
+
+.category:hover::before,
+.category:active::before,
+.category:focus::before {
+  content: "";
+  height: 24px;
+  width: 3px;
+  background-color: white;
+}
+
+.category:hover svg,
+.category:active svg,
+.category:focus svg {
+  transition: all 300ms ease-in-out;
+  transform: translateX(5px);
+}
+
+.category:hover h2,
+.category:active h2,
+.category:focus h2 {
+  transition: all 300ms ease-in-out;
+  transform: translateX(5px);
+}
+
+.language__icons,
+.skill__icons,
+.hooby__icons {
+  position: absolute;
+  right: 0;
+  top: 3px;
+}
+
+.experience__icons,
+.education__icons,
+.reference__icons {
+  background-color: #e2e8f0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.language__icons > svg,
+.skill__icons > svg,
+.hooby__icons > svg,
+.experience__icons > svg,
+.education__icons > svg,
+.reference__icons > svg {
+  margin-right: 5px;
+}
+
+.language__icons svg,
+.skill__icons svg,
+.hooby__icons svg,
+.experience__icons svg,
+.education__icons svg,
+.reference__icons svg {
+  display: none;
+}
+
+.language:hover .language__icons svg,
+.skill:hover .skill__icons svg,
+.hooby:hover .hooby__icons svg,
+.experience:hover .experience__icons svg,
+.education:hover .education__icons svg,
+.reference:hover .reference__icons svg {
+  display: inline-block;
+}
+
+.language__icons svg:hover,
+.skill__icons svg:hover,
+.hooby__icons svg:hover,
+.experience__icons svg:hover,
+.education__icons svg:hover,
+.reference__icons svg:hover {
+  color: #e74c3c;
+}

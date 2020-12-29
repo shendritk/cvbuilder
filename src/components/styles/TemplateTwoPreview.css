@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+.root {
+  width: 1000px;
+  height: 1500px;
+  font-family: "Roboto", sans-serif;
+  color: #1a202c;
+}
+
+.top {
+  height: 22%;
+  background-color: #ef5777;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.top span {
+  color: #1a202c;
+}
+
+.top__square {
+  height: 70px;
+  width: 70px;
+  background-color: #1a202c;
+}
+
+.top__squareTop {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.top__squareBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.top__profession {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.top h2 {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.top h3 {
+  background-color: #1a202c;
+  padding: 5px 20px;
+  margin-top: 20px;
+}
+
+.main {
+  background-color: #f7fafc;
+  height: 78%;
+  display: flex;
+}
+
+.main__left {
+  width: 40%;
+}
+
+.profile {
+  padding: 30px;
+}
+
+.category__title {
+  font-size: 2.5rem;
+  color: #ef5777;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.profile__info {
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.main__right {
+  width: 60%;
+}
+
+.skills,
+.languages {
+  padding: 30px;
+}
+
+.skills__list,
+.languages__list {
+  margin-top: 20px;
+}
+
+.skill__name {
+  width: 60%;
+  margin-bottom: 5px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+}
+
+.skill__progress {
+  width: 30%;
+  height: 5px;
+  background-color: #ef5777;
+}
+
+.hoobies {
+  padding: 30px;
+}
+
+.hooby_item {
+  margin-bottom: 5px;
+}
+
+.experiences {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.education__container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.education > h2 {
+  padding-left: 20px;
+}
+
+.educationItem {
+  margin-bottom: 20px;
+}
+
+.experiences h3,
+.educationItem h3 {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+
+.experience__position,
+.educationItem__studyField {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.experience__description {
+  margin: 10px 0px 20px 0px;
+}
+
+.references {
+  padding: 20px;
+}
+.references__container {
+  display: flex;
+  justify-content: space-between;
+}
