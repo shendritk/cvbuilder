@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import { API_URL } from "../../utils";
 import TemplateContext from "../utils/TemplateContext";
 import Header from "../home/Header";
 import DashboardAccount from "./DashboardAccount";
@@ -25,7 +24,7 @@ function Dashboard(props) {
 
   useEffect(() => {
     async function getCvs() {
-      const response = await axios.get(`${API_URL}/api/v1/cv/all/${user._id}`);
+      const response = await axios.get(`/api/v1/cv/all/${user._id}`);
       setCvs(response.data.cvs);
       setLoading(false);
     }
@@ -39,7 +38,7 @@ function Dashboard(props) {
 
   const handleLogout = async () => {
     try {
-      await axios.get(`${API_URL}/api/v1/logout`);
+      await axios.get("/api/v1/logout");
       state.addUser(null);
       props.history.push("/");
     } catch (err) {
@@ -88,7 +87,7 @@ function Dashboard(props) {
   return (
     <>
       {!user && handleRedirectToLogin()}
-      
+
       {user && (
         <div className="flex flex-col">
           <>

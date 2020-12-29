@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { API_URL } from "../../utils";
 import LoadingScreen from "../utils/LoadingScreen";
 
 function DashboardHome(props) {
@@ -10,7 +9,7 @@ function DashboardHome(props) {
 
   const handleDeleteCv = async (id) => {
     try {
-      await axios.post(`${API_URL}/api/v1/cv/delete/${id}`, {
+      await axios.post(`/api/v1/cv/delete/${id}`, {
         userId,
       });
       deleteCvFromState(id);
@@ -65,7 +64,7 @@ function DashboardHome(props) {
                     </span>
                     <span className="mx-2 font-bold">
                       <a
-                        href={`${API_URL}/api/v1/cv/${cv.downloadUrl}`}
+                        href={`/api/v1/cv/${cv.downloadUrl}`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >

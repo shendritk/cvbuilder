@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import { API_URL } from "../../utils";
 import InputText from "../inputs/InputText";
 
 function DashboardAccount() {
@@ -18,7 +17,7 @@ function DashboardAccount() {
   const handleChangePassword = async (event) => {
     event.preventDefault();
     try {
-      await axios.post(`${API_URL}/api/v1/user/changePassword`, {
+      await axios.post("/api/v1/user/changePassword", {
         ...input,
         email: "janedoe4@example.com",
       });

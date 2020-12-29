@@ -1,1 +1,1 @@
-export const API_URL = "http://localhost:8000";
+export const API_URL = "https://warm-spire-48430.herokuapp.com";

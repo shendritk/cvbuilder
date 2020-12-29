@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
-import { API_URL } from "../../utils";
 import InputText from "../inputs/InputText";
 
 function SignUp(props) {
@@ -26,7 +25,7 @@ function SignUp(props) {
 
     setLoading(true);
     try {
-      await axios.post(`${API_URL}/api/v1/signup`, input);
+      await axios.post("/api/v1/signup", input);
       props.history.push("/login?signup=true");
     } catch (err) {
       toast.error("Something went wrong.");

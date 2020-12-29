@@ -3,7 +3,6 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import TemplateContext from "../utils/TemplateContext";
 import InputText from "../inputs/InputText";
-import { API_URL } from "../../utils";
 
 function Login(props) {
   const [input, setInput] = useState({
@@ -44,13 +43,13 @@ function Login(props) {
     try {
       // Login but also save the CV that user is trying to create.
       if (props.save) {
-        res = await axios.post(`${API_URL}/api/v1/login?save=true`, {
+        res = await axios.post('/api/v1/login?save=true', {
           ...input,
           cv: { ...categories, template: state.values.template },
         });
         // Login simply
       } else {
-        res = await axios.post(`${API_URL}/api/v1/login`, input);
+        res = await axios.post('/api/v1/login', input);
       }
 
       state.addUser(res.data.data.user);

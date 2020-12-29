@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import Loader from "react-loader-spinner";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
-import { API_URL } from "../../utils";
 import TemplateContext from "../utils/TemplateContext";
 import Footer from "../home/Footer";
 import Header from "../home/Header";
@@ -143,7 +142,7 @@ function CreateCV(props) {
     setSpinnerActive(true);
     try {
       if (!validateInput()) return;
-      const res = await axios.post(`${API_URL}/api/v1/cv`, {
+      const res = await axios.post('/api/v1/cv', {
         values,
         template: template === "Template One" ? 1 : 2,
       });
@@ -161,7 +160,7 @@ function CreateCV(props) {
     if (values.user.email) {
       try {
         if (!validateInput()) return;
-        await axios.post(`${API_URL}/api/v1/cv/save`, {
+        await axios.post('/api/v1/cv/save', {
           cv: { ...values.categories, template: values.template },
           email: values.user.email,
         });

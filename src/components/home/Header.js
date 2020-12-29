@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { API_URL } from "../../utils";
 import TemplateContext from "../utils/TemplateContext";
 
 function Header(props) {
@@ -15,7 +14,7 @@ function Header(props) {
 
   const handleLogout = async () => {
     try {
-      await axios.get(`${API_URL}/api/v1/logout`);
+      await axios.get("/api/v1/logout");
       state.addUser(null);
       props.history.push("/");
     } catch (err) {}

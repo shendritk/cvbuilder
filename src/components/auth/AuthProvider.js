@@ -9,7 +9,6 @@ import Dashboard from "../dashboard/Dashboard";
 import Error404 from "../utils/Error404";
 import LoadingScreen from "../utils/LoadingScreen";
 import Home from "../home/Home";
-import { API_URL } from "../../utils";
 import "../styles/main.css";
 
 /**
@@ -23,7 +22,7 @@ function AuthProvider() {
   useEffect(() => {
     async function fetchUser() {
       try {
-        const res = await axios.get(`${API_URL}/api/v1/protected`);
+        const res = await axios.get("/api/v1/protected");
         state.addUser(res.data.user);
 
         setLoading(false);
