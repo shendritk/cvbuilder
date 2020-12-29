@@ -63,7 +63,8 @@ app.use("/api/v1/user", userRouter);
 
 // If no routes are matched until now, this will get excecuted.
 app.all("*", (req, res, next) => {
-  next(new AppError(`Cannot find ${req.originalUrl} on this server!`));
+  // next(new AppError(`Cannot find ${req.originalUrl} on this server!`));
+  res.send(`<center><h1>Cannot find ${req.originalUrl}</h1></center>`);
 });
 
 // Middleware for handling Express errors

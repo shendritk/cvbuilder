@@ -86,7 +86,7 @@ const createCookies = (tokens, req, res) => {
       Date.now() + parseInt(process.env.JWT_ACCESS_EXPIRES_IN) * 60 * 1000
     ),
     httpOnly: true,
-    secure: req.secure || req.headers("x-forwarded-proto") === "https",
+    secure: req.secure || req.headers["x-forwarded-proto"] === "https",
   };
 
   const refreshTokenCookieOptions = {
@@ -95,7 +95,7 @@ const createCookies = (tokens, req, res) => {
         parseInt(process.env.JWT_REFRESH_EXPIRES_IN) * 24 * 60 * 60 * 1000
     ),
     httpOnly: true,
-    secure: req.secure || req.headers("x-forwarded-proto") === "https",
+    secure: req.secure || req.headers["x-forwarded-proto"] === "https",
   };
 
   // Create the cookies and attach them to response.
