@@ -46,7 +46,7 @@ const generateTokensFromRefreshToken = async (req, res, next) => {
 
 const generateTokens = async (id) => {
   // Generate the access token
-  const jwt_access_token = await jwt.sign(
+  const jwt_access_token = await promisify(jwt.sign)(
     { id },
     process.env.JWT_ACCESS_TOKEN,
     {
@@ -55,7 +55,7 @@ const generateTokens = async (id) => {
   );
 
   // Generate the refresh token
-  const jwt_refresh_token = await jwt.sign(
+  const jwt_refresh_token = await promisify(jwt.sign)(
     { id },
     process.env.JWT_REFRESH_TOKEN,
     {
