@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  -webkit-print-color-adjust: exact;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  height: 1400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.left {
+  width: 650px;
+  height: 1400px;
+  background-color: #2d3436;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  color: #bfbfbf;
+  padding-left: 65px;
+  padding-top: 50px;
+}
+
+.left__contactLabel {
+  color: #f5f6fa;
+  font-weight: 400;
+  padding-right: 10px;
+  padding-bottom: 15px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #718093;
+  margin-top: 25px;
+}
+
+.left__contactRow {
+  margin-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  color: #f5f6fa;
+}
+
+.left__contactRow ul {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+  list-style-type: none;
+}
+
+.left__contactRow ul li {
+  margin-top: 5px;
+}
+
+.left__contactRow ul li:first-child {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.left__contactLabel {
+  color: #f5f6fa;
+  font-weight: 400;
+  padding-right: 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #718093;
+  margin-top: 40px;
+}
+
+.left__hoobiesLabel {
+  margin-top: 5px;
+}
+
+.left__skillName {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.left__skillProgressContainer {
+  width: 80%;
+  background-color: #596275;
+  height: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.left__skillProgress {
+  background-color: #f5f6fa;
+  height: 10px;
+  border-radius: 10px;
+}
+
+.left__skillProgress--0 {
+  width: 0;
+}
+
+.left__skillProgress--10 {
+  width: 10%;
+}
+
+.left__skillProgress--20 {
+  width: 20%;
+}
+
+.left__skillProgress--30 {
+  width: 30%;
+}
+
+.left__skillProgress--40 {
+  width: 40%;
+}
+
+.left__skillProgress--50 {
+  width: 50%;
+}
+
+.left__skillProgress--60 {
+  width: 60%;
+}
+
+.left__skillProgress--70 {
+  width: 70%;
+}
+
+.left__skillProgress--80 {
+  width: 80%;
+}
+
+.left__skillProgress--90 {
+  width: 90%;
+}
+
+.left__skillProgress--100 {
+  width: 100%;
+}
+
+.left__languageContainer {
+  margin-top: 10px;
+}
+
+.left__languageContainer:nth-child(1) {
+  font-size: 1.1em;
+  margin-top: 20px;
+}
+
+.left__languageContainer:nth-child(2) {
+  margin-top: 10px;
+}
+
+.left__languageContainerSpan {
+  font-weight: bold;
+  color: #f7f7f7;
+}
+
+.left_hoobiesLabel {
+  font-size: 1.2em;
+  margin-top: 5px;
+}
+
+/* RIGHT SIDE */
+
+.right {
+  height: 1400px;
+  padding: 0 30px;
+  padding-top: 40px;
+  background-color: #fcfcfc;
+}
+
+.right__name {
+  font-size: 2.5rem;
+  padding-top: 40px;
+}
+
+.right__profession {
+  font-size: 1.5rem;
+  /* margin-top: -15px; */
+  margin-bottom: 20px;
+}
+
+.right__section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  color: #2f3640;
+}
+
+.right__text {
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #2f3640;
+  padding-bottom: 10px;
+  margin-top: 35px;
+}
+
+.right__row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.right__rowLeft {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-right: 15px;
+  width: 20%;
+}
+
+.right__references {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+/* .right__reference {
+  width: 100%;
+} */
+
+.right__rowLeftText {
+  margin-top: 5px;
+}
+
+.right__rowRight {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: 15px;
+  width: 80%;
+}
+
+.right_rowRight p {
+  text-align: justify;
+}
+
+.right_rowRightTitle {
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.right__referencesText {
+  display: block;
+  word-wrap: break-word;
+  margin-top: 5px;
+}
+
+.right__referenceContainer {
+  margin-top: 1rem;
+}
+
+.right__referencesContainer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-content: space-between;
+}
