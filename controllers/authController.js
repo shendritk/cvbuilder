@@ -37,7 +37,7 @@ const generateTokensFromRefreshToken = async (req, res, next) => {
   // Generate the new tokens and attach the cookies to response.
   await RefreshToken.deleteOne({ token: req.cookies.jwt_refresh });
   const tokens = await generateTokens(decoded.id);
-  await createCookies(tokens, res);
+  await createCookies(tokens, req, res);
 
   // Everything is fine, so move to the next middleware.
   req.user = user;
@@ -77,7 +77,7 @@ const generateTokens = async (id) => {
   return { jwt_access_token, jwt_refresh_token };
 };
 
-const createCookies = (tokens, res) => {
+const createCookies = (tokens, req, res) => {
   const { jwt_access_token, jwt_refresh_token } = tokens;
 
   // Create cookie options
@@ -86,7 +86,7 @@ const createCookies = (tokens, res) => {
       Date.now() + parseInt(process.env.JWT_ACCESS_EXPIRES_IN) * 60 * 1000
     ),
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: req.secure || req.headers("x-forwarded-proto") === "https",
   };
 
   const refreshTokenCookieOptions = {
@@ -95,7 +95,7 @@ const createCookies = (tokens, res) => {
         parseInt(process.env.JWT_REFRESH_EXPIRES_IN) * 24 * 60 * 60 * 1000
     ),
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: req.secure || req.headers("x-forwarded-proto") === "https",
   };
 
   // Create the cookies and attach them to response.
@@ -105,11 +105,11 @@ const createCookies = (tokens, res) => {
   return res;
 };
 
-const sendTokens = async (user, res, cookies) => {
+const sendTokens = async (user, req, res, cookies) => {
   // Generate tokens
   const tokens = await generateTokens(user._id, cookies);
 
-  const resWithCookies = createCookies(tokens, res);
+  const resWithCookies = createCookies(tokens, req, res);
   res = resWithCookies;
 
   // Remove the user password from response.
@@ -162,7 +162,7 @@ exports.signUp = async (req, res, next) => {
   }
 
   // Create tokens, cookies and respond
-  sendTokens(user, res, req.cookies);
+  sendTokens(user, req, res, req.cookies);
 };
 
 exports.login = catchAsync(async (req, res, next) => {
@@ -227,7 +227,7 @@ exports.login = catchAsync(async (req, res, next) => {
   }
 
   // Create tokens, cookies and respond
-  sendTokens(user, res, req.cookies);
+  sendTokens(user, req, res, req.cookies);
 });
 
 exports.protect = async (req, res, next) => {
