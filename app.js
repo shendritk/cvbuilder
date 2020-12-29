@@ -18,22 +18,7 @@ const globalErrorHandler = require("./controllers/errorController");
 app.use(cors());
 
 app.use(express.json({ limit: "10kb" }));
-app.use(express.static(`${__dirname}/build`));
-
 app.use(helmet());
-
-if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
-}
-
-// Limit requests from same IP - 100 requests per hour
-const limiter = rateLimit({
-  max: 100,
-  windowMs: 60 * 60 * 1000,
-  message: "To many requests from this IP, please try again later.",
-});
-
-app.use("/api", limiter);
 
 // Security
 app.use(mongoSanitize());
@@ -47,8 +32,22 @@ app.use(
     whitelist: ["save", "signup"],
   })
 );
+// Limit requests from same IP - 100 requests per hour
+const limiter = rateLimit({
+  max: 100,
+  windowMs: 60 * 60 * 1000,
+  message: "To many requests from this IP, please try again later.",
+});
+
+app.use("/api", limiter);
 
 app.use(compression());
+
+app.use(express.static(`${__dirname}/build`));
+
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
 
 app.get("/api/v1/start", (req, res, next) => {
   res.status(200).json({
