@@ -15,6 +15,8 @@ const userRouter = require("./routes/userRoutes");
 const AppError = require("./utils/AppError");
 const globalErrorHandler = require("./controllers/errorController");
 
+app.use(express.static(`${__dirname}/build`));
+
 app.use(cors());
 
 app.use(express.json({ limit: "10kb" }));
@@ -42,8 +44,6 @@ const limiter = rateLimit({
 app.use("/api", limiter);
 
 app.use(compression());
-
-app.use(express.static(`${__dirname}/build`));
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));

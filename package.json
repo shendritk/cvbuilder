@@ -44,7 +44,7 @@
   "scripts": {
     "start": "node server.js",
     "start:front-dev": "npm run build:css && react-scripts start",
-    "build:front-dev": "npm run build:css && react-scripts build",
+    "build:front": "npm run build:css && react-scripts build",
     "start:back-dev": "nodemon server.js",
     "start:front-test": "react-scripts test",
     "start:front-eject": "react-scripts eject",
