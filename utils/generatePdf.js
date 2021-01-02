@@ -7,6 +7,7 @@ module.exports = async (data, template) => {
   // Launch a new chrome instance
   const browser = await puppeteer.launch({
     headless: true,
+    args: ["--no-sandbox", "--single-process", "--no-zygote"],
   });
 
   // Create a new page
