@@ -20,9 +20,14 @@ module.exports = async (data, template) => {
   });
 
   // Add the inline css to the HTML String
-  const htmlWithCss = await inlineCss(html, {
-    url: `${process.env.HOST_URL}`,
-  });
+  let htmlWithCss = null;
+  try {
+    htmlWithCss = await inlineCss(html, {
+      url: `${process.env.HOST_URL}/template${template}.css`,
+    });
+  } catch (err) {
+    console.log("Error", err);
+  }
 
   await page.setContent(htmlWithCss, {
     waitUntil: "domcontentloaded",

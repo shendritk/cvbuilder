@@ -70,7 +70,7 @@ function ContactDetails(props) {
             handleChangeValue={handleChangeValue}
           />
           <InputText
-            value={contacts[8].value}
+            value={contacts[9].value}
             label="Website"
             name="website"
             placeholder="www.example.com"
@@ -79,7 +79,7 @@ function ContactDetails(props) {
         </div>
         <div className="w-full">
           <InputText
-            value={contacts[9].value}
+            value={contacts[8].value}
             label="Email"
             name="email"
             placeholder="janedoe@example.com"

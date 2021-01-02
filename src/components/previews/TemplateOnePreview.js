@@ -16,7 +16,7 @@ function TemplateOnePreview(props) {
 
   return (
     <div
-      className="cv-w cv-h sm:w-full lg:w-full xl:mx-4 mb-8 flex border border-gray-400 cv-preview-font shadow-xl overflow-auto"
+      className="cv-w cv-h sm:w-full lg:w-full xl:mx-4 mb-8 flex border border-gray-400 cv-preview-font shadow-xl"
       style={{ width: "1000px", height: "1500px" }}
     >
       {/* LEFT */}

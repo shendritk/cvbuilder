@@ -12,6 +12,7 @@ body {
 }
 
 .container {
+  width: 1000px;
   height: 1400px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,7 +24,7 @@ body {
 }
 
 .left {
-  width: 650px;
+  width: 400px;
   height: 1400px;
   background-color: #2d3436;
   display: -webkit-box;
@@ -179,6 +180,7 @@ body {
 /* RIGHT SIDE */
 
 .right {
+  width: 600px;
   height: 1400px;
   padding: 0 30px;
   padding-top: 40px;
