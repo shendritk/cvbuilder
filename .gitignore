@@ -10,7 +10,7 @@
 
 # production
 
-
+/pdf-files
 config.env
 
 # misc
