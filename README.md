@@ -17,4 +17,4 @@ This website was implemented using:
 - MongoDB and Mongoose
 - TailwindCSS
 
-![Natours Preview](https://warm-spire-48430.herokuapp.com/static/media/createcvpreview.eda061df.gif)
+![Natours Preview](https://i.postimg.cc/G2dxwC33/cvpreview.gif)
